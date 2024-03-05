@@ -3,4 +3,4 @@ ya sea completadas o pendientes.
 
 🇺🇸 This website allows you to add an unlimited number of notes/tasks, which can be edited or deleted, also you can filter the list according to their status (completed or pending).
 
-![Portafolio](https://github.com/MauricioBarrueta/ToDoList/assets/60496232/d8ab1f00-1816-447c-ba83-2f7eeaa71725)
+![toDoList](https://github.com/MauricioBarrueta/ToDoList/assets/60496232/9cd16f85-2c3c-4a19-92cc-5fbe85b3bfe4)
