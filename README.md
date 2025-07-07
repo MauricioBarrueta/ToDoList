@@ -1,8 +1,7 @@
-🇲🇽 Este sitio web permite agregar un número ilimitado de notas/tareas, las cuales pueden ser editadas o borradas, además de poder filtrar la lista de acuerdo al estado de las mismas (completadas o pendientes).
+🇲🇽 Sitio web desarrollado con JavaScript, SCSS y Bootstrap, publicado mediante GitHub Pages.
 
-🇺🇸 This website allows you to add an unlimited number of notes/tasks, which can be edited or deleted, and to filter the list according to their status (completed or pending).
+🇺🇸 Website developed with JavaScript, SCSS and Bootstrap, published via GitHub Pages.
 
 🔗 https://mauriciobarrueta.github.io/ToDoList/
 
-
-![toDoList](https://github.com/MauricioBarrueta/ToDoList/assets/60496232/9cd16f85-2c3c-4a19-92cc-5fbe85b3bfe4)
+![to-do](https://github.com/user-attachments/assets/a23ff4d9-0fe8-4664-9a75-58e3f95986d2)
