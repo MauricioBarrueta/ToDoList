@@ -1,18 +1,11 @@
 const taskInput = document.querySelector('.list-form input'), listControls = document.querySelectorAll('.btn-group button'),
     clearListButton = document.getElementById('clear-button'), taskList = document.querySelector('.task-list'),
-    alertMessage = document.getElementById('alert'), currentDateValue = document.getElementById('dateValue')
+    alertMessage = document.getElementById('alert')
 
 window.onload = () => {
     taskInput.value = ''
-    getCurrentDate()
     toDoTasksList('all')  
     toDoList.length < 1 ? clearListButton.disabled = true : clearListButton.disabled = false
-}
-
-const getCurrentDate = () => {
-    let date = new Date().toLocaleDateString('es-mx', { weekday:"long", year:"numeric", month:"long", day:"numeric"})    
-    let dateFormat = `Lista de tareas del día ${date}:`
-    currentDateValue.textContent = dateFormat
 }
 
 var taskId, isEditedTask, taskElement = '', toDoList = JSON.parse(localStorage.getItem('to-do-list'))
@@ -60,7 +53,7 @@ const toDoTasksList = (taskStatus) => {
                             <p class="${isCompleted}">${task.name}</p>
                         </label>
                         <div class="settings">
-                            <i onclick="taskOptionsMenu(this)">&#xf141;</i>
+                            <i onclick="taskOptionsMenu(this)">&#xf142;</i>
                             <ul class="task-menu">                            
                                 <li onclick='editTask(${id}, "${task.name}")'>&#xf044; Editar</li>
                                 <li onclick='deleteTask(${id}, "${taskStatus}")'>&#xf55a; Borrar</li>
@@ -70,7 +63,8 @@ const toDoTasksList = (taskStatus) => {
             }            
         })
     }
-    taskList.innerHTML = taskElement || `<span>&#xf06a; &nbsp; Es posible que la lista esté vacía &nbsp; &#xf06a;</span>`
+
+    taskList.innerHTML = taskElement || `<span>Tu lista está vacía &nbsp;&#xf01c;</span>`
 }
 
 /* Verifica si el checkbox esta activo o no, si lo está se cambia el estado de la tarea a 'completada', si no, se cambia a 'pendiente' */
@@ -80,7 +74,7 @@ const updateTaskStatus = (task) => {
         : (selectedTask.classList.remove('checked'), toDoList[task.id].status = 'pending')
     localStorage.setItem('to-do-list', JSON.stringify(toDoList))
 
-    let alertText = task.checked ? 'Tarea completada | \u{f560}' : 'Esta tarea sigue pendiente | \u{f017}'
+    let alertText = task.checked ? '\u{f14a}\u{00A0} Tarea completada' : '\u{f017}\u{00A0} Tarea pendiente'
     alertMessage.textContent = alertText
     setTimeout(() => {
         alertMessage.classList.add('collapse')
@@ -107,18 +101,16 @@ const editTask = (id, name) => {
 /* Remueve la nota seleccionada de la lista de tareas */
 const deleteTask = (id, name) => {
     isEditedTask = false
-    toDoList.splice(id, 1) //*(position: id, remove: 1)
+    toDoList.splice(id, 1) //* (position: id, remove: 1)
     localStorage.setItem('to-do-list', JSON.stringify(toDoList))
     toDoTasksList(name)
 }
 
 /* Limpia toda la lista de tareas una vez se confirma la acción */
-var myModal = new bootstrap.Modal(document.getElementById('modal'), { keyboard: false })
 const clearList = () => {
     isEditedTask = false
     toDoList.splice(0, toDoList.length)
     localStorage.setItem('to-do-list', JSON.stringify(toDoList))
     toDoTasksList()
-    myModal.hide()
     clearListButton.disabled = true
 }
