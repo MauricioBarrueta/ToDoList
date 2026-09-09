@@ -1,6 +1,6 @@
 🇲🇽 Sitio web desarrollado con JavaScript, SCSS y Bootstrap, publicado mediante GitHub Pages.
 
-🇺🇸 Website developed with JavaScript, SCSS and Bootstrap, published via GitHub Pages.
+🇺🇸 Website developed with JavaScript, using SCSS and Bootstrap, deployed on GitHub Pages.
 
 🔗 https://mauriciobarrueta.github.io/ToDoList/
 
